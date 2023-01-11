@@ -3,8 +3,8 @@ vlib work
 vmap work work
 
 #compile
-vlog -work work "./sv/fibonacci.sv"
-vlog -work work "./sv/fibonacci_tb.sv"
+vlog -work work "../sv/fibonacci.sv"
+vlog -work work "../sv/fibonacci_tb.sv"
 
 #run simulation
 vsim -classdebug -voptargs=+acc +notimingchecks -L work work.fibonacci_tb -wlf fibonacci.wlf
