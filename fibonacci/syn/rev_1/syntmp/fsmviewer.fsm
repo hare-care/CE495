@@ -1,0 +1,39 @@
+fsm_options -device {state[2:0]}
+
+define_state init 00 {/home/hbb0163/ce495/CE495/sv/fibonacci.sv} 55 7 55 10
+state_output init {state[0]} 1
+
+define_state calc 01 {/home/hbb0163/ce495/CE495/sv/fibonacci.sv} 76 6 76 9
+state_output calc {state[1]} 1
+
+define_state base 10 {/home/hbb0163/ce495/CE495/sv/fibonacci.sv} 70 6 70 9
+state_output base {state[2]} 1
+
+fsm_options -resetState init
+
+define_transition init base {dout_c10,start,din[0],din[1],din[2],din[3],din[4],din[5],din[6],din[7],din[8],din[9],din[10],din[11],din[12],din[13],din[14],din[15] = -11000000000000000}
+define_transition calc calc {dout_c10,start,din[0],din[1],din[2],din[3],din[4],din[5],din[6],din[7],din[8],din[9],din[10],din[11],din[12],din[13],din[14],din[15] = 0-----------------}
+define_transition init calc {dout_c10,start,din[0],din[1],din[2],din[3],din[4],din[5],din[6],din[7],din[8],din[9],din[10],din[11],din[12],din[13],din[14],din[15] = -1---------------1}
+define_transition init calc {dout_c10,start,din[0],din[1],din[2],din[3],din[4],din[5],din[6],din[7],din[8],din[9],din[10],din[11],din[12],din[13],din[14],din[15] = -1--------------1-}
+define_transition init calc {dout_c10,start,din[0],din[1],din[2],din[3],din[4],din[5],din[6],din[7],din[8],din[9],din[10],din[11],din[12],din[13],din[14],din[15] = -1-------------1--}
+define_transition init calc {dout_c10,start,din[0],din[1],din[2],din[3],din[4],din[5],din[6],din[7],din[8],din[9],din[10],din[11],din[12],din[13],din[14],din[15] = -1------------1---}
+define_transition init calc {dout_c10,start,din[0],din[1],din[2],din[3],din[4],din[5],din[6],din[7],din[8],din[9],din[10],din[11],din[12],din[13],din[14],din[15] = -1-----------1----}
+define_transition init calc {dout_c10,start,din[0],din[1],din[2],din[3],din[4],din[5],din[6],din[7],din[8],din[9],din[10],din[11],din[12],din[13],din[14],din[15] = -1----------1-----}
+define_transition init calc {dout_c10,start,din[0],din[1],din[2],din[3],din[4],din[5],din[6],din[7],din[8],din[9],din[10],din[11],din[12],din[13],din[14],din[15] = -1---------1------}
+define_transition init calc {dout_c10,start,din[0],din[1],din[2],din[3],din[4],din[5],din[6],din[7],din[8],din[9],din[10],din[11],din[12],din[13],din[14],din[15] = -1--------1-------}
+define_transition init calc {dout_c10,start,din[0],din[1],din[2],din[3],din[4],din[5],din[6],din[7],din[8],din[9],din[10],din[11],din[12],din[13],din[14],din[15] = -1-------1--------}
+define_transition init calc {dout_c10,start,din[0],din[1],din[2],din[3],din[4],din[5],din[6],din[7],din[8],din[9],din[10],din[11],din[12],din[13],din[14],din[15] = -1------1---------}
+define_transition init calc {dout_c10,start,din[0],din[1],din[2],din[3],din[4],din[5],din[6],din[7],din[8],din[9],din[10],din[11],din[12],din[13],din[14],din[15] = -1-----1----------}
+define_transition init calc {dout_c10,start,din[0],din[1],din[2],din[3],din[4],din[5],din[6],din[7],din[8],din[9],din[10],din[11],din[12],din[13],din[14],din[15] = -1----1-----------}
+define_transition init calc {dout_c10,start,din[0],din[1],din[2],din[3],din[4],din[5],din[6],din[7],din[8],din[9],din[10],din[11],din[12],din[13],din[14],din[15] = -1---1------------}
+define_transition init calc {dout_c10,start,din[0],din[1],din[2],din[3],din[4],din[5],din[6],din[7],din[8],din[9],din[10],din[11],din[12],din[13],din[14],din[15] = -1--1-------------}
+define_transition init calc {dout_c10,start,din[0],din[1],din[2],din[3],din[4],din[5],din[6],din[7],din[8],din[9],din[10],din[11],din[12],din[13],din[14],din[15] = -1-1--------------}
+define_transition init calc {dout_c10,start,din[0],din[1],din[2],din[3],din[4],din[5],din[6],din[7],din[8],din[9],din[10],din[11],din[12],din[13],din[14],din[15] = -10---------------}
+define_transition base init {dout_c10,start,din[0],din[1],din[2],din[3],din[4],din[5],din[6],din[7],din[8],din[9],din[10],din[11],din[12],din[13],din[14],din[15] = ------------------}
+define_transition calc init {dout_c10,start,din[0],din[1],din[2],din[3],din[4],din[5],din[6],din[7],din[8],din[9],din[10],din[11],din[12],din[13],din[14],din[15] = 1-----------------}
+define_transition init init {dout_c10,start,din[0],din[1],din[2],din[3],din[4],din[5],din[6],din[7],din[8],din[9],din[10],din[11],din[12],din[13],din[14],din[15] = -0----------------}
+fsm_options -SRSPath {/home/hbb0163/ce495/CE495/syn/rev_1/synwork/fibonacci_mult.srs}
+fsm_options -SRSTime 1673408179
+fsm_options -FSMPath {state[2:0]}
+fsm_options -view {work.fibonacci.verilog|i:state[2:0]}
+fsm_options -ID {10222221}
