@@ -81,7 +81,7 @@ module fibonacci_tb;
 
 /* Input of 6*/
 	#10;
-	din = 16'd8;
+	din = 16'd6;
 	start = 1'b1;
 	#10 start = 1'b0;
 	
