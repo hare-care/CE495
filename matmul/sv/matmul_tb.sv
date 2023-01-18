@@ -8,7 +8,7 @@ module matmul_tb ();
     localparam string Z_NAME = "z.txt";
     localparam DATA_WIDTH = 32;
     localparam ADDR_WIDTH = 10;
-    localparam VECTOR_SIZE = 64;
+    localparam MATRIX_SIZE = 64;
     localparam CLOCK_PERIOD = 10;
 
     logic clock = 1'b0;

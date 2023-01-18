@@ -16,23 +16,25 @@ module matmul
     output logic                     z_wr_en
 );
 
-typedef enum logic [1:0] {init, i_cond, j_cond, k_cond, main} state_t;
-state_t state, next_state;
+typedef enum logic [4:0] {init, i_cond, j_cond, k_cond, main} state_t;
+state_t state, state_c;
 logic [ADDR_WIDTH-1:0] i, i_c, j, j_c, k, k_c;
 logic [DATA_WIDTH-1:0] add_hold, add_hold_c;
-logic done_c;
+logic done_c, done_o;
+
+assign done = done_o;
 
 always_ff @(posedge clock or posedge reset) begin
     if (reset) begin
         state <= init;
-        done <= 1'b0;
+        done_o <= 1'b0;
         i <= '0;
         j <= '0;
         k <= '0;
         add_hold <= '0;
     end else begin
         state <= state_c;
-        done <= done_c;
+        done_o <= done_c;
         i <= i_c;
         j <= j_c;
         k <= k_c;
