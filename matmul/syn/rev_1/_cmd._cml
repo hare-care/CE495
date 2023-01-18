@@ -1,0 +1,1 @@
+-distcompmode -link    -encrypt       -top work.matmul_top -osyn /home/hbb0163/ce495/CE495/matmul/syn/rev_1/synwork/matmul_comp.srs /home/hbb0163/ce495/CE495/matmul/syn/rev_1/synwork//distcomp/distcomp0/distcomp0.srs    

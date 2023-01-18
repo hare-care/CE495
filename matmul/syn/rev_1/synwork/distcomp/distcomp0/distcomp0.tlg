@@ -1,0 +1,40 @@
+@N:: Applying property .distcompmodetop with value 1 on module matmul_top in library work
+@N:: Applying property .distcompnoprune with value 1 on module matmul_top in library work
+@N:: Applying property .noprune with value 1 on module matmul_top in library work
+@N:: Applying property .distcompnoprune with value 1 on module bram in library work
+@N:: Applying property .noprune with value 1 on module bram in library work
+@N:: Applying property .distcompnoprune with value 1 on module matmul in library work
+@N:: Applying property .noprune with value 1 on module matmul in library work
+Selecting top level module matmul_top
+@N: CG364 :"/home/hbb0163/ce495/CE495/matmul/sv/matmul.sv":1:7:1:12|Synthesizing module matmul in library work.
+
+	DATA_WIDTH=32'b00000000000000000000000000100000
+	ADDR_WIDTH=32'b00000000000000000000000000000111
+	MATRIX_SIZE=32'b00000000000000000000000000001000
+   Generated name = matmul_32s_7s_8s
+Running optimization stage 1 on matmul_32s_7s_8s .......
+@N: CG364 :"/home/hbb0163/ce495/CE495/matmul/sv/bram.sv":1:7:1:10|Synthesizing module bram in library work.
+
+	BRAM_ADDR_WIDTH=32'b00000000000000000000000000000111
+	BRAM_DATA_WIDTH=32'b00000000000000000000000000100000
+   Generated name = bram_7s_32s
+Running optimization stage 1 on bram_7s_32s .......
+@N: CL134 :"/home/hbb0163/ce495/CE495/matmul/sv/bram.sv":16:2:16:10|Found RAM mem, depth=128, width=32
+@N: CG364 :"/home/hbb0163/ce495/CE495/matmul/sv/matmul_top.sv":1:7:1:16|Synthesizing module matmul_top in library work.
+Running optimization stage 1 on matmul_top .......
+Running optimization stage 2 on matmul_top .......
+Running optimization stage 2 on bram_7s_32s .......
+Running optimization stage 2 on matmul_32s_7s_8s .......
+@N: CL201 :"/home/hbb0163/ce495/CE495/matmul/sv/matmul.sv":27:0:27:8|Trying to extract state machine for register state.
+Extracted state machine for register state
+State machine has 5 reachable states with original encodings of:
+   00000
+   00001
+   00010
+   00011
+   00100
+
+For a summary of runtime and memory usage per design unit, please see file:
+==========================================================
+@L: /home/hbb0163/ce495/CE495/matmul/syn/rev_1/synwork//distcomp/distcomp0/distcomp0.rt.csv
+

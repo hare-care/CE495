@@ -1,0 +1,2 @@
+@W: FA406 |Environment variable QUARTUS_ROOTDIR not set. Cannot determine PAR version.
+@W: MT529 :"/home/hbb0163/ce495/CE495/matmul/sv/matmul.sv":27:0:27:8|Found inferred clock matmul_top|clock which controls 176 sequential elements including matmul_inst.state[4:0]. This clock has no specified timing constraint which may prevent conversion of gated or generated clocks and may adversely impact design performance. 

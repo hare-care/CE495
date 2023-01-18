@@ -1,0 +1,33 @@
+fsm_options -device {state[4:0]}
+
+define_state init 00000 {/home/hbb0163/ce495/CE495/matmul/sv/matmul.sv} 60 8 60 11
+state_output init {state[0]} 1
+
+define_state i_cond 00001 {/home/hbb0163/ce495/CE495/matmul/sv/matmul.sv} 73 8 73 13
+state_output i_cond {state[1]} 1
+
+define_state j_cond 00010 {/home/hbb0163/ce495/CE495/matmul/sv/matmul.sv} 83 8 83 13
+state_output j_cond {state[2]} 1
+
+define_state k_cond 00011 {/home/hbb0163/ce495/CE495/matmul/sv/matmul.sv} 95 8 95 13
+state_output k_cond {state[3]} 1
+
+define_state main 00100 {/home/hbb0163/ce495/CE495/matmul/sv/matmul.sv} 111 8 111 11
+state_output main {state[4]} 1
+
+fsm_options -resetState init
+
+define_transition k_cond main {k[10],j[10],i[10],start = 0---}
+define_transition main k_cond {k[10],j[10],i[10],start = ----}
+define_transition j_cond k_cond {k[10],j[10],i[10],start = -0--}
+define_transition k_cond j_cond {k[10],j[10],i[10],start = 1---}
+define_transition i_cond j_cond {k[10],j[10],i[10],start = --0-}
+define_transition j_cond i_cond {k[10],j[10],i[10],start = -1--}
+define_transition init i_cond {k[10],j[10],i[10],start = ---1}
+define_transition i_cond init {k[10],j[10],i[10],start = --1-}
+define_transition init init {k[10],j[10],i[10],start = ---0}
+fsm_options -SRSPath {/home/hbb0163/ce495/CE495/matmul/syn/rev_1/synwork/matmul_mult.srs}
+fsm_options -SRSTime 1674066682
+fsm_options -FSMPath {matmul_inst.state[4:0]}
+fsm_options -view {work.matmul_32s_11s_1024s_matmul_inst.verilog|i:state[4:0]}
+fsm_options -ID {11270271}
