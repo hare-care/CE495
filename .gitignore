@@ -1,0 +1,5 @@
+*.ini
+*.wlf
+*/sim/work
+transcript
+*.elf
