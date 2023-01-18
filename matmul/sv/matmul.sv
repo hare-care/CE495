@@ -6,7 +6,7 @@ module matmul
     input logic                      clock,
     input logic                      reset,
     input logic                      start,
-    input logic                      done,
+    output logic                      done,
     input logic     [DATA_WIDTH-1:0] x_dout,
     input logic     [DATA_WIDTH-1:0] y_dout,
     output logic    [ADDR_WIDTH-1:0] x_addr,
@@ -53,13 +53,15 @@ always_comb begin
     i_c = i;
     j_c = j;
     k_c = k;
-    done_c = done;
+    done_c = done_o;
+    add_hold_c = add_hold;
 
     case (state)
         init: begin
             i_c = '0;
             j_c = '0;
             k_c = '0;
+            add_hold_c = '0;
             if (start == 1'b1) begin
                 state_c = i_cond;
                 done_c = 1'b0;
@@ -71,6 +73,7 @@ always_comb begin
         i_cond: begin
             if ($unsigned(i) < $unsigned(MATRIX_SIZE)) begin
                 state_c = j_cond;
+                j_c = '0;
             end else begin 
                 done_c = 1'b1;
                 state_c = init;
@@ -80,9 +83,11 @@ always_comb begin
         j_cond: begin
             if ($unsigned(j) < $unsigned(MATRIX_SIZE)) begin
                 state_c = k_cond;
+                k_c = '0;
             end else begin
-                done_c = 0'b1;
+                done_c = 1'b0;
                 state_c = i_cond;
+                i_c = i + 'b1;
             end
 
         end
@@ -93,19 +98,31 @@ always_comb begin
                 y_addr = k*MATRIX_SIZE +j;
                 state_c = main;
             end else begin
+                j_c = j + 'b1;
                 z_din = add_hold;
                 z_addr = i*MATRIX_SIZE + j;
                 z_wr_en = 1'b1;
-                done_c = 0'b1;
+                done_c = 1'b0;
                 add_hold_c = '0;
                 state_c = j_cond;
             end
         end
 
         main: begin
-            add_hold_c = add_hold + $signed(y_dout) * $signed(x_dout);
+            add_hold_c = $signed(add_hold) + $signed(y_dout) * $signed(x_dout);
             k_c = k +'b1;
             state_c = k_cond;
+        end
+
+        default: begin
+            z_din   = 'x;
+            z_wr_en = 'x;
+            z_addr  = 'x;
+            x_addr  = 'x;
+            y_addr  = 'x;
+            state_c = init;
+            i_c     = 'x;
+            done_c  = 'x;
         end
     endcase
 end

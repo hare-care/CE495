@@ -33,7 +33,7 @@ module matmul_tb ();
     matmul_top #(
         .DATA_WIDTH(DATA_WIDTH),
         .ADDR_WIDTH(ADDR_WIDTH),
-        .VECTOR_SIZE(VECTOR_SIZE)
+        .MATRIX_SIZE(MATRIX_SIZE)
     ) matmul_top_inst (
         .clock(clock),
         .reset(reset),

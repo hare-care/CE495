@@ -1,6 +1,6 @@
 module matmul_top
 #(  parameter DATA_WIDTH = 32,
-    parameter ADDR_WIDTH = 10,
+    parameter ADDR_WIDTH = 11,
     parameter MATRIX_SIZE = 1024)
 (
     input  logic                  clock,
@@ -29,7 +29,7 @@ matmul #(
     .DATA_WIDTH(DATA_WIDTH),
     .ADDR_WIDTH(ADDR_WIDTH),
     .MATRIX_SIZE(MATRIX_SIZE)
-) vectorsum_inst (
+) matmul_inst (
     .clock(clock),
     .reset(reset),
     .start(start),
