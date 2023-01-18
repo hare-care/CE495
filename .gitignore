@@ -3,3 +3,7 @@
 */sim/work
 transcript
 *.elf
+*.log
+*.tcl
+*.log.bak
+*.log.bak.1
