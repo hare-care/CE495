@@ -2,6 +2,10 @@ Cycles: 532612 cycles
 
 LUTs: 290
 
+Registers: 173
+
+I/O Pins: 135
+
 Memory: 196608
 
 Multipliers: 3 (15)
