@@ -1,4 +1,4 @@
-Cycles: 532612 cycles
+Cycles: 1172
 
 LUTs: 290
 
