@@ -1,0 +1,11 @@
+Cycles: 532612 cycles
+
+LUTs: 290
+
+Memory: 196608
+
+Multipliers: 3 (15)
+
+Timing: 75.5 MHz
+
+Errors: None
