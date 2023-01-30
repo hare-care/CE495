@@ -1,0 +1,2 @@
+@W: FA406 |Environment variable QUARTUS_ROOTDIR not set. Cannot determine PAR version.
+@W: MT529 :"/home/hbb0163/ce495/CE495/motion_detect/sv/grayscale.sv":18:0:18:8|Found inferred clock motion_detect_top|clock which controls 440 sequential elements including base_grayscale_inst.gs[7:0]. This clock has no specified timing constraint which may prevent conversion of gated or generated clocks and may adversely impact design performance. 

@@ -1,0 +1,11 @@
+motion_detect_top.in_hold_inst work fifo 0 1
+motion_detect_top.z_inst work fifo 0 1
+motion_detect_top.motion_detect_inst work motion_detect 0 1
+motion_detect_top.mask_inst work fifo 0 1
+motion_detect_top.y_inst work fifo 0 1
+motion_detect_top.x_inst work fifo 0 1
+motion_detect_top.vectorsub_inst work vectorsub 0 1
+motion_detect_top.base_inst work fifo 0 1
+motion_detect_top.input_inst work fifo 0 1
+motion_detect_top.input_grayscale_inst work grayscale 0 1
+motion_detect_top.base_grayscale_inst work grayscale 0 1

@@ -1,0 +1,183 @@
+
+Copyright (C) 1994-2018 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify (R) Premier
+Build: O-2018.09-SP1
+Install: /vol/synopsys/fpga/O-2018.09-SP1
+OS: Red Hat Enterprise Linux 8.7 (Ootpa)
+Hostname: ras.ece.northwestern.edu
+max virtual memory: unlimited (bytes)
+max user processes: 62381
+max stack size: 8388608 (bytes)
+
+
+Implementation : rev_1
+
+# Written on Mon Jan 30 15:24:24 2023
+
+##### DESIGN INFO #######################################################
+
+Top View:                "motion_detect_top"
+Constraint File(s):      (none)
+
+
+
+
+##### SUMMARY ############################################################
+
+Found 0 issues in 0 out of 0 constraints
+
+
+##### DETAILS ############################################################
+
+
+
+Clock Relationships
+*******************
+
+Starting                    Ending                      |     rise to rise     |     fall to fall     |     rise to fall     |     fall to rise                     
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+System                      motion_detect_top|clock     |     3.725            |     No paths         |     No paths         |     No paths                         
+motion_detect_top|clock     System                      |     3.725            |     No paths         |     No paths         |     No paths                         
+motion_detect_top|clock     motion_detect_top|clock     |     3.725            |     No paths         |     No paths         |     No paths                         
+===================================================================================================================================================================
+ Note: 'No paths' indicates there are no paths in the design for that pair of clock edges.
+       'Diff grp' indicates that paths exist but the starting clock and ending clock are in different clock groups.
+
+
+Unconstrained Start/End Points
+******************************
+
+p:base_din[0]
+p:base_din[1]
+p:base_din[2]
+p:base_din[3]
+p:base_din[4]
+p:base_din[5]
+p:base_din[6]
+p:base_din[7]
+p:base_din[8]
+p:base_din[9]
+p:base_din[10]
+p:base_din[11]
+p:base_din[12]
+p:base_din[13]
+p:base_din[14]
+p:base_din[15]
+p:base_din[16]
+p:base_din[17]
+p:base_din[18]
+p:base_din[19]
+p:base_din[20]
+p:base_din[21]
+p:base_din[22]
+p:base_din[23]
+p:base_full
+p:base_wr_en
+p:in_hold_din[0]
+p:in_hold_din[1]
+p:in_hold_din[2]
+p:in_hold_din[3]
+p:in_hold_din[4]
+p:in_hold_din[5]
+p:in_hold_din[6]
+p:in_hold_din[7]
+p:in_hold_din[8]
+p:in_hold_din[9]
+p:in_hold_din[10]
+p:in_hold_din[11]
+p:in_hold_din[12]
+p:in_hold_din[13]
+p:in_hold_din[14]
+p:in_hold_din[15]
+p:in_hold_din[16]
+p:in_hold_din[17]
+p:in_hold_din[18]
+p:in_hold_din[19]
+p:in_hold_din[20]
+p:in_hold_din[21]
+p:in_hold_din[22]
+p:in_hold_din[23]
+p:in_hold_full
+p:in_hold_wr_en
+p:input_din[0]
+p:input_din[1]
+p:input_din[2]
+p:input_din[3]
+p:input_din[4]
+p:input_din[5]
+p:input_din[6]
+p:input_din[7]
+p:input_din[8]
+p:input_din[9]
+p:input_din[10]
+p:input_din[11]
+p:input_din[12]
+p:input_din[13]
+p:input_din[14]
+p:input_din[15]
+p:input_din[16]
+p:input_din[17]
+p:input_din[18]
+p:input_din[19]
+p:input_din[20]
+p:input_din[21]
+p:input_din[22]
+p:input_din[23]
+p:input_full
+p:input_wr_en
+p:reset
+p:z_dout[0]
+p:z_dout[1]
+p:z_dout[2]
+p:z_dout[3]
+p:z_dout[4]
+p:z_dout[5]
+p:z_dout[6]
+p:z_dout[7]
+p:z_dout[8]
+p:z_dout[9]
+p:z_dout[10]
+p:z_dout[11]
+p:z_dout[12]
+p:z_dout[13]
+p:z_dout[14]
+p:z_dout[15]
+p:z_dout[16]
+p:z_dout[17]
+p:z_dout[18]
+p:z_dout[19]
+p:z_dout[20]
+p:z_dout[21]
+p:z_dout[22]
+p:z_dout[23]
+p:z_empty
+p:z_rd_en
+
+
+Inapplicable constraints
+************************
+
+(none)
+
+
+Applicable constraints with issues
+**********************************
+
+(none)
+
+
+Constraints with matching wildcard expressions
+**********************************************
+
+(none)
+
+
+Library Report
+**************
+
+
+# End of Constraint Checker Report

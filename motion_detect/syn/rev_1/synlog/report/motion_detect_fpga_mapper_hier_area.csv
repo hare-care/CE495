@@ -1,0 +1,14 @@
+
+. Module name, ATOMS, ARITHMETIC MODE, REGISTERS, SYNC RAMS, MACs
+. motion_detect_top, 293, 0, 136, 7, 0
+.	. fifo_24s_32s_6s_2, 22, 0, 13, 1, 0
+.	. fifo_24s_32s_6s_2_0, 22, 0, 13, 1, 0
+.	. fifo_24s_32s_6s_4, 26, 0, 13, 1, 0
+.	. fifo_24s_32s_6s_4_0, 27, 0, 13, 1, 0
+.	. fifo_24s_32s_6s_4_1, 24, 0, 13, 1, 0
+.	. fifo_24s_32s_6s_4_2, 21, 0, 13, 1, 0
+.	. fifo_24s_32s_6s_4_3, 25, 0, 13, 1, 0
+.	. grayscale, 26, 0, 9, 0, 0
+.	. grayscale_0, 27, 0, 9, 0, 0
+.	. motion_detect_24s, 46, 0, 25, 0, 0
+.	. vectorsub_24s_50s, 25, 0, 2, 0, 0

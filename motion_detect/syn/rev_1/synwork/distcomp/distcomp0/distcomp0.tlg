@@ -1,0 +1,51 @@
+@N:: Applying property .distcompmodetop with value 1 on module motion_detect_top in library work
+@N:: Applying property .distcompnoprune with value 1 on module motion_detect_top in library work
+@N:: Applying property .noprune with value 1 on module motion_detect_top in library work
+@N:: Applying property .distcompnoprune with value 1 on module fifo in library work
+@N:: Applying property .noprune with value 1 on module fifo in library work
+@N:: Applying property .distcompnoprune with value 1 on module motion_detect in library work
+@N:: Applying property .noprune with value 1 on module motion_detect in library work
+@N:: Applying property .distcompnoprune with value 1 on module vectorsub in library work
+@N:: Applying property .noprune with value 1 on module vectorsub in library work
+@N:: Applying property .distcompnoprune with value 1 on module grayscale in library work
+@N:: Applying property .noprune with value 1 on module grayscale in library work
+Selecting top level module motion_detect_top
+@N: CG364 :"/home/hbb0163/ce495/CE495/motion_detect/sv/grayscale.sv":2:7:2:15|Synthesizing module grayscale in library work.
+Running optimization stage 1 on grayscale .......
+
+@N: CG364 :"/home/hbb0163/ce495/CE495/motion_detect/sv/fifo.sv":2:7:2:10|Synthesizing module fifo in library work.
+
+	FIFO_DATA_WIDTH=32'b00000000000000000000000000011000
+	FIFO_BUFFER_SIZE=32'b00000000000000000000000000100000
+	FIFO_ADDR_WIDTH=32'b00000000000000000000000000000110
+   Generated name = fifo_24s_32s_6s
+Running optimization stage 1 on fifo_24s_32s_6s .......
+@N: CL134 :"/home/hbb0163/ce495/CE495/motion_detect/sv/fifo.sv":35:4:35:12|Found RAM fifo_buf, depth=32, width=24
+@N: CG364 :"/home/hbb0163/ce495/CE495/motion_detect/sv/vectorsub.sv":2:7:2:15|Synthesizing module vectorsub in library work.
+
+	DATA_WIDTH=32'b00000000000000000000000000011000
+	THRESHOLD=32'b00000000000000000000000000110010
+   Generated name = vectorsub_24s_50s
+Running optimization stage 1 on vectorsub_24s_50s .......
+@N: CG364 :"/home/hbb0163/ce495/CE495/motion_detect/sv/motion_detect.sv":2:7:2:19|Synthesizing module motion_detect in library work.
+
+	DATA_WIDTH=32'b00000000000000000000000000011000
+   Generated name = motion_detect_24s
+Running optimization stage 1 on motion_detect_24s .......
+@N: CG364 :"/home/hbb0163/ce495/CE495/motion_detect/sv/motion_detect_top.sv":2:7:2:23|Synthesizing module motion_detect_top in library work.
+@W: CS263 :"/home/hbb0163/ce495/CE495/motion_detect/sv/motion_detect_top.sv":104:9:104:13|Port-width mismatch for port din. The port definition is 24 bits, but the actual port connection bit width is 8. Adjust either the definition or the instantiation of this port.
+@W: CS263 :"/home/hbb0163/ce495/CE495/motion_detect/sv/motion_detect_top.sv":119:9:119:13|Port-width mismatch for port din. The port definition is 24 bits, but the actual port connection bit width is 8. Adjust either the definition or the instantiation of this port.
+@W: CG133 :"/home/hbb0163/ce495/CE495/motion_detect/sv/motion_detect_top.sv":24:19:24:25|Object in_full is declared but not assigned. Either assign a value or remove the declaration.
+Running optimization stage 1 on motion_detect_top .......
+Running optimization stage 2 on motion_detect_top .......
+@N: CL159 :"/home/hbb0163/ce495/CE495/motion_detect/sv/motion_detect_top.sv":15:17:15:26|Input base_wr_en is unused.
+Running optimization stage 2 on motion_detect_24s .......
+Running optimization stage 2 on vectorsub_24s_50s .......
+@W: CL279 :"/home/hbb0163/ce495/CE495/motion_detect/sv/vectorsub.sv":23:0:23:8|Pruning register bits 23 to 1 of sum[23:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+Running optimization stage 2 on fifo_24s_32s_6s .......
+Running optimization stage 2 on grayscale .......
+
+For a summary of runtime and memory usage per design unit, please see file:
+==========================================================
+@L: /home/hbb0163/ce495/CE495/motion_detect/syn/rev_1/synwork//distcomp/distcomp0/distcomp0.rt.csv
+
