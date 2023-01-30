@@ -1,0 +1,15 @@
+Cycles: 884745
+
+LUTs:
+
+Registers:
+
+I/O Pins: 
+
+Memory: 
+
+Multipliers:
+
+Timing:
+
+Error Count: 0

@@ -40,7 +40,7 @@ always_comb begin
     case (state)
         s0: begin
             if (mask_empty == 1'b0 && base_empty == 1'b0) begin
-                sum_c = (mask_dout)? 24'hff00ff:base_dout;
+                sum_c = (mask_dout)? 24'h0000ff:base_dout;
                 mask_rd_en = 1'b1;
                 base_rd_en = 1'b1;
                 state_c = s1;

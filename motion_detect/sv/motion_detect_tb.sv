@@ -25,7 +25,7 @@ logic        base_wr_en  = '0;
 logic [23:0] base_din    = '0;
 logic        out_rd_en;
 logic        out_empty;
-logic  [7:0] out_dout;
+logic  [23:0] out_dout;
 
 logic   hold_clock    = '0;
 logic   in_write_done = '0;
@@ -34,8 +34,8 @@ logic   base_write_done = '0;
 logic   out_read_done = '0;
 integer out_errors    = '0;
 
-localparam WIDTH = 720;
-localparam HEIGHT = 540;
+localparam WIDTH = 768;
+localparam HEIGHT = 576;
 localparam BMP_HEADER_SIZE = 54;
 localparam BYTES_PER_PIXEL = 3;
 localparam BMP_DATA_SIZE = WIDTH*HEIGHT*BYTES_PER_PIXEL;
@@ -220,9 +220,9 @@ initial begin : img_write_process
         out_rd_en = 1'b0;
         if (out_empty == 1'b0) begin
             r = $fread(cmp_dout, cmp_file, BMP_HEADER_SIZE+i, BYTES_PER_PIXEL);
-            $fwrite(out_file, "%c%c%c", out_dout, out_dout, out_dout);
+            $fwrite(out_file, "%c%c%c", out_dout[23:16], out_dout[15:8], out_dout[7:0]);
 
-            if (cmp_dout != {3{out_dout}}) begin
+            if (cmp_dout != {out_dout}) begin
                 out_errors += 1;
                 $write("@ %0t: %s(%0d): ERROR: %x != %x at address 0x%x.\n", $time, IMG_OUT_NAME, i+1, {3{out_dout}}, cmp_dout, i);
             end
