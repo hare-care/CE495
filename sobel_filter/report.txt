@@ -1,0 +1,15 @@
+Cycles: 
+
+LUTs: 
+
+Registers: 
+
+I/O Pins: 
+
+Memory: 
+
+Multipliers: 
+
+Timing: 
+
+Error Count: 
