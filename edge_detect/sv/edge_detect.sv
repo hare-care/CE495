@@ -1,5 +1,7 @@
 
-module edge_detect_top #(  
+module edge_detect #(
+    parameter WIDTH = 720,
+    parameter HEIGHT= 540,
     parameter DATA_WIDTH = 24,
     parameter FIFO_BUFFER_SIZE = 32)
 (
