@@ -12,11 +12,11 @@ module edge_detect #(
     input  logic [DATA_WIDTH-1:0] input_din,
     input  logic out_rd_en,
     output logic out_empty,
-    output logic [DATA_WIDTH-1:0] out_dout
+    output logic [DATA_WIDTH /3 -1:0] out_dout
 );
 
 logic [DATA_WIDTH-1:0] input_dout;
-logic [DATA_WIDTH/3 -1 :0] gs_din, gs_dout;
+logic [DATA_WIDTH/3 -1 :0] gs_din, gs_dout, out_din;
 logic input_empty, input_rd_en, gs_full, gs_wr_en, gs_empty, gs_rd_en;
 
 grayscale #(
@@ -45,6 +45,9 @@ fifo #(
     .dout(gs_dout),
     .empty(gs_empty)
 );
+
+
+
 
 fifo #(
     .FIFO_BUFFER_SIZE(FIFO_BUFFER_SIZE),
@@ -76,7 +79,7 @@ sobel #(
 
 fifo #(
     .FIFO_BUFFER_SIZE(FIFO_BUFFER_SIZE),
-    .FIFO_DATA_WIDTH(DATA_WIDTH)
+    .FIFO_DATA_WIDTH(DATA_WIDTH/3)
 ) output_fifo (
     .reset(reset),
     .wr_clk(clock),
@@ -88,20 +91,5 @@ fifo #(
     .dout(out_dout),
     .empty(out_empty)
 );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 endmodule
