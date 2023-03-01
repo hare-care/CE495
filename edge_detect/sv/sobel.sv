@@ -26,12 +26,12 @@ logic [2:0][2:0][7:0] buffer;
 typedef enum logic [1:0] {s0, s1, s2} state_types;
 state_types state, state_c;
 
-parameter h_op = {{8'hFF, 8'h00, 8'h01}, 
-                  {8'hFE, 8'h00, 8'h02},
-                  {8'hFF, 8'h00, 8'h01}};
-parameter v_op = {{8'hFF, 8'hFE, 8'hFF}, 
-                  {8'h00, 8'h00, 8'h00},
-                  {8'h01, 8'h02, 8'h01}};
+parameter [7:0] h_op [2:0][2:0]= '{'{8'hFF, 8'h00, 8'h01}, 
+                                   '{8'hFE, 8'h00, 8'h02},
+                                   '{8'hFF, 8'h00, 8'h01}};
+parameter [7:0] v_op [2:0][2:0]= '{'{8'hFF, 8'hFE, 8'hFF}, 
+                                   '{8'h00, 8'h00, 8'h00},
+                                   '{8'h01, 8'h02, 8'h01}};
 
 function [15:0] abs (input logic [15:0] val);
     abs = (val[15])? -val:val;
@@ -126,11 +126,12 @@ begin
                     for (int j = 0; j < 3; j++) begin
                         for (int i = 0; i < 3; i++) begin
                             //$display("hgrad:%x vgrad:%x\n", h_grad, v_grad);
+                            //$display("%x", h_op[j][i]);
                             h_grad += buffer[j][i]*$signed(h_op[i][j]);
                             v_grad += buffer[j][i]*$signed(v_op[i][j]);
                         end
                     end
-                    $display("hgrad:%x vgrad:%x\n", h_grad, v_grad);
+                    //$display("hgrad:%x vgrad:%x\n", h_grad, v_grad);
                     out_hold = abs(v_grad) + abs(h_grad);
                     out_din_temp = ($unsigned(out_hold) > 255)  ? 8'hFF  : out_hold[7:0];
                     out_din = out_din_temp;
