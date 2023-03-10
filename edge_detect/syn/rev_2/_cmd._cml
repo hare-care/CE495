@@ -1,0 +1,1 @@
+-distcompmode -link    -encrypt       -top work.edge_detect -osyn /home/hbb0163/ce495/CE495/edge_detect/syn/rev_2/synwork/edge_detect_comp.srs /home/hbb0163/ce495/CE495/edge_detect/syn/rev_2/synwork//distcomp/distcomp0/distcomp0.srs    

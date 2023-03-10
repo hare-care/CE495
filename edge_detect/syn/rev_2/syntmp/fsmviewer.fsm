@@ -1,0 +1,32 @@
+fsm_options -device {state[2:0]}
+
+define_state s0 00 {/home/hbb0163/ce495/CE495/edge_detect/sv/sobel.sv} 94 8 94 9
+state_output s0 {state[0]} 1
+
+define_state s1 01 {/home/hbb0163/ce495/CE495/edge_detect/sv/sobel.sv} 99 8 99 9
+state_output s1 {state[1]} 1
+
+define_state s2 10 {/home/hbb0163/ce495/CE495/edge_detect/sv/sobel.sv} 110 8 110 9
+state_output s2 {state[2]} 1
+
+fsm_options -resetState s0
+
+define_transition s2 s2 {in_empty,cnt[0],cnt[1],cnt[2],cnt[3],cnt[4],cnt[5],cnt[6],cnt[7],cnt[8],cnt[9],cnt[10] = ------------}
+define_transition s1 s2 {in_empty,cnt[0],cnt[1],cnt[2],cnt[3],cnt[4],cnt[5],cnt[6],cnt[7],cnt[8],cnt[9],cnt[10] = ----------11}
+define_transition s1 s2 {in_empty,cnt[0],cnt[1],cnt[2],cnt[3],cnt[4],cnt[5],cnt[6],cnt[7],cnt[8],cnt[9],cnt[10] = -------111-1}
+define_transition s1 s2 {in_empty,cnt[0],cnt[1],cnt[2],cnt[3],cnt[4],cnt[5],cnt[6],cnt[7],cnt[8],cnt[9],cnt[10] = -----11-11-1}
+define_transition s1 s2 {in_empty,cnt[0],cnt[1],cnt[2],cnt[3],cnt[4],cnt[5],cnt[6],cnt[7],cnt[8],cnt[9],cnt[10] = ----1-1-11-1}
+define_transition s1 s2 {in_empty,cnt[0],cnt[1],cnt[2],cnt[3],cnt[4],cnt[5],cnt[6],cnt[7],cnt[8],cnt[9],cnt[10] = ---1--1-11-1}
+define_transition s1 s2 {in_empty,cnt[0],cnt[1],cnt[2],cnt[3],cnt[4],cnt[5],cnt[6],cnt[7],cnt[8],cnt[9],cnt[10] = -11---1-11-1}
+define_transition s1 s1 {in_empty,cnt[0],cnt[1],cnt[2],cnt[3],cnt[4],cnt[5],cnt[6],cnt[7],cnt[8],cnt[9],cnt[10] = -----------0}
+define_transition s1 s1 {in_empty,cnt[0],cnt[1],cnt[2],cnt[3],cnt[4],cnt[5],cnt[6],cnt[7],cnt[8],cnt[9],cnt[10] = --------0-0-}
+define_transition s1 s1 {in_empty,cnt[0],cnt[1],cnt[2],cnt[3],cnt[4],cnt[5],cnt[6],cnt[7],cnt[8],cnt[9],cnt[10] = ---------00-}
+define_transition s1 s1 {in_empty,cnt[0],cnt[1],cnt[2],cnt[3],cnt[4],cnt[5],cnt[6],cnt[7],cnt[8],cnt[9],cnt[10] = ------00--0-}
+define_transition s1 s1 {in_empty,cnt[0],cnt[1],cnt[2],cnt[3],cnt[4],cnt[5],cnt[6],cnt[7],cnt[8],cnt[9],cnt[10] = -0-000-0--0-}
+define_transition s1 s1 {in_empty,cnt[0],cnt[1],cnt[2],cnt[3],cnt[4],cnt[5],cnt[6],cnt[7],cnt[8],cnt[9],cnt[10] = --0000-0--0-}
+define_transition s0 s1 {in_empty,cnt[0],cnt[1],cnt[2],cnt[3],cnt[4],cnt[5],cnt[6],cnt[7],cnt[8],cnt[9],cnt[10] = ------------}
+fsm_options -SRSPath {/home/hbb0163/ce495/CE495/edge_detect/syn/rev_2/synwork/edge_detect_mult.srs}
+fsm_options -SRSTime 1677694624
+fsm_options -FSMPath {sobel_inst.state[2:0]}
+fsm_options -view {work.sobel_sobel_inst.verilog|i:state[2:0]}
+fsm_options -ID {13600601}

@@ -1,0 +1,3 @@
+@E: CG502 :"/home/hbb0163/ce495/CE495/edge_detect/sv/sobel.sv":130:59:130:66|Too many indices into v_op
+@E: CS187 :"/home/hbb0163/ce495/CE495/edge_detect/sv/sobel.sv":204:0:204:8|Expecting endmodule
+

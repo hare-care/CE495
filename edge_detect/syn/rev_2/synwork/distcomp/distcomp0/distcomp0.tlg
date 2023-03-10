@@ -1,0 +1,62 @@
+@N:: Applying property .distcompmodetop with value 1 on module edge_detect in library work
+@N:: Applying property .distcompnoprune with value 1 on module edge_detect in library work
+@N:: Applying property .noprune with value 1 on module edge_detect in library work
+@N:: Applying property .distcompnoprune with value 1 on module fifo in library work
+@N:: Applying property .noprune with value 1 on module fifo in library work
+@N:: Applying property .distcompnoprune with value 1 on module sobel in library work
+@N:: Applying property .noprune with value 1 on module sobel in library work
+@N:: Applying property .distcompnoprune with value 1 on module shift_register in library work
+@N:: Applying property .noprune with value 1 on module shift_register in library work
+@N:: Applying property .distcompnoprune with value 1 on module grayscale in library work
+@N:: Applying property .noprune with value 1 on module grayscale in library work
+Selecting top level module edge_detect
+@N: CG364 :"/home/hbb0163/ce495/CE495/edge_detect/sv/grayscale.sv":2:7:2:15|Synthesizing module grayscale in library work.
+Running optimization stage 1 on grayscale .......
+@N: CG364 :"/home/hbb0163/ce495/CE495/edge_detect/sv/fifo.sv":2:7:2:10|Synthesizing module fifo in library work.
+
+	FIFO_DATA_WIDTH=32'b00000000000000000000000000011000
+	FIFO_BUFFER_SIZE=32'b00000000000000000000000000100000
+	FIFO_ADDR_WIDTH=32'b00000000000000000000000000000110
+   Generated name = fifo_24s_32s_6s
+Running optimization stage 1 on fifo_24s_32s_6s .......
+@N: CL134 :"/home/hbb0163/ce495/CE495/edge_detect/sv/fifo.sv":35:4:35:12|Found RAM fifo_buf, depth=32, width=24
+@N: CG364 :"/home/hbb0163/ce495/CE495/edge_detect/sv/sobel.sv":153:7:153:20|Synthesizing module shift_register in library work.
+Running optimization stage 1 on shift_register .......
+@N: CG364 :"/home/hbb0163/ce495/CE495/edge_detect/sv/sobel.sv":1:7:1:11|Synthesizing module sobel in library work.
+@N: CG793 :"/home/hbb0163/ce495/CE495/edge_detect/sv/sobel.sv":133:20:133:27|Ignoring system task $display
+Running optimization stage 1 on sobel .......
+@W: CL118 :"/home/hbb0163/ce495/CE495/edge_detect/sv/sobel.sv":93:4:93:7|Latch generated from always block for signal y_c[9:0]; possible missing assignment in an if or case statement.
+@W: CL118 :"/home/hbb0163/ce495/CE495/edge_detect/sv/sobel.sv":93:4:93:7|Latch generated from always block for signal x_c[9:0]; possible missing assignment in an if or case statement.
+@W: CL217 :"/home/hbb0163/ce495/CE495/edge_detect/sv/sobel.sv":93:4:93:7|always_comb does not infer combinatorial logic
+@W: CL217 :"/home/hbb0163/ce495/CE495/edge_detect/sv/sobel.sv":93:4:93:7|always_comb does not infer combinatorial logic
+@N: CG364 :"/home/hbb0163/ce495/CE495/edge_detect/sv/fifo.sv":2:7:2:10|Synthesizing module fifo in library work.
+
+	FIFO_DATA_WIDTH=32'b00000000000000000000000000001000
+	FIFO_BUFFER_SIZE=32'b00000000000000000000000000100000
+	FIFO_ADDR_WIDTH=32'b00000000000000000000000000000110
+   Generated name = fifo_8s_32s_6s
+Running optimization stage 1 on fifo_8s_32s_6s .......
+@N: CL134 :"/home/hbb0163/ce495/CE495/edge_detect/sv/fifo.sv":35:4:35:12|Found RAM fifo_buf, depth=32, width=8
+@N: CG364 :"/home/hbb0163/ce495/CE495/edge_detect/sv/edge_detect.sv":2:7:2:17|Synthesizing module edge_detect in library work.
+@W: CS263 :"/home/hbb0163/ce495/CE495/edge_detect/sv/edge_detect.sv":41:9:41:14|Port-width mismatch for port din. The port definition is 24 bits, but the actual port connection bit width is 8. Adjust either the definition or the instantiation of this port.
+@W: CS263 :"/home/hbb0163/ce495/CE495/edge_detect/sv/edge_detect.sv":45:10:45:16|Port-width mismatch for port dout. The port definition is 24 bits, but the actual port connection bit width is 8. Adjust either the definition or the instantiation of this port.
+Running optimization stage 1 on edge_detect .......
+Running optimization stage 2 on edge_detect .......
+Running optimization stage 2 on fifo_8s_32s_6s .......
+Running optimization stage 2 on sobel .......
+@N: CL201 :"/home/hbb0163/ce495/CE495/edge_detect/sv/sobel.sv":60:0:60:8|Trying to extract state machine for register state.
+Extracted state machine for register state
+State machine has 3 reachable states with original encodings of:
+   00
+   01
+   10
+Running optimization stage 2 on shift_register .......
+@N: CL135 :"/home/hbb0163/ce495/CE495/edge_detect/sv/sobel.sv":187:4:187:12|Found sequential shift shift_reg with address depth of 718 words and data bit width of 8.
+@N: CL135 :"/home/hbb0163/ce495/CE495/edge_detect/sv/sobel.sv":187:4:187:12|Found sequential shift shift_reg with address depth of 718 words and data bit width of 8.
+Running optimization stage 2 on fifo_24s_32s_6s .......
+Running optimization stage 2 on grayscale .......
+
+For a summary of runtime and memory usage per design unit, please see file:
+==========================================================
+@L: /home/hbb0163/ce495/CE495/edge_detect/syn/rev_2/synwork//distcomp/distcomp0/distcomp0.rt.csv
+

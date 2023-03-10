@@ -1,0 +1,115 @@
+
+Copyright (C) 1994-2018 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify (R) Premier
+Build: O-2018.09-SP1
+Install: /vol/synopsys/fpga/O-2018.09-SP1
+OS: Red Hat Enterprise Linux 8.7 (Ootpa)
+Hostname: ras.ece.northwestern.edu
+max virtual memory: unlimited (bytes)
+max user processes: 62381
+max stack size: 8388608 (bytes)
+
+
+Implementation : rev_2
+
+# Written on Wed Mar  1 12:17:05 2023
+
+##### DESIGN INFO #######################################################
+
+Top View:                "edge_detect"
+Constraint File(s):      (none)
+
+
+
+
+##### SUMMARY ############################################################
+
+Found 0 issues in 0 out of 0 constraints
+
+
+##### DETAILS ############################################################
+
+
+
+Clock Relationships
+*******************
+
+Starting              Ending                |     rise to rise     |     fall to fall     |     rise to fall     |     fall to rise                     
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+System                edge_detect|clock     |     4.275            |     No paths         |     No paths         |     No paths                         
+edge_detect|clock     System                |     4.275            |     No paths         |     No paths         |     No paths                         
+edge_detect|clock     edge_detect|clock     |     4.275            |     No paths         |     No paths         |     No paths                         
+=======================================================================================================================================================
+ Note: 'No paths' indicates there are no paths in the design for that pair of clock edges.
+       'Diff grp' indicates that paths exist but the starting clock and ending clock are in different clock groups.
+
+
+Unconstrained Start/End Points
+******************************
+
+p:input_din[0]
+p:input_din[1]
+p:input_din[2]
+p:input_din[3]
+p:input_din[4]
+p:input_din[5]
+p:input_din[6]
+p:input_din[7]
+p:input_din[8]
+p:input_din[9]
+p:input_din[10]
+p:input_din[11]
+p:input_din[12]
+p:input_din[13]
+p:input_din[14]
+p:input_din[15]
+p:input_din[16]
+p:input_din[17]
+p:input_din[18]
+p:input_din[19]
+p:input_din[20]
+p:input_din[21]
+p:input_din[22]
+p:input_din[23]
+p:input_full
+p:input_wr_en
+p:out_dout[0]
+p:out_dout[1]
+p:out_dout[2]
+p:out_dout[3]
+p:out_dout[4]
+p:out_dout[5]
+p:out_dout[6]
+p:out_dout[7]
+p:out_empty
+p:out_rd_en
+p:reset
+
+
+Inapplicable constraints
+************************
+
+(none)
+
+
+Applicable constraints with issues
+**********************************
+
+(none)
+
+
+Constraints with matching wildcard expressions
+**********************************************
+
+(none)
+
+
+Library Report
+**************
+
+
+# End of Constraint Checker Report

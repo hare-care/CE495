@@ -1,0 +1,6 @@
+edge_detect.output_fifo work fifo 0 1
+edge_detect.sobel_inst.shift_reg_inst work shift_register 0 1
+edge_detect.sobel_inst work sobel 0 1
+edge_detect.input_fifo work fifo 0 1
+edge_detect.gs_fifo work fifo 0 1
+edge_detect.grayscale_inst work grayscale 0 1
