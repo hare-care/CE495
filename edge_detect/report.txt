@@ -1,4 +1,4 @@
-Cycles: 
+Cycles: 391692
 
 LUTs: 
 
@@ -12,4 +12,4 @@ Multipliers:
 
 Timing: 
 
-Error Count: 
+Error Count: 381876
